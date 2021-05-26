@@ -18,6 +18,12 @@ public class DemoSwitch {
 			default: System.out.println("Le nombre est supérieur à 4");
 				break;
 			}
+		
+		int age = 20;
+		String autorisation = (age >= 13)? "Oui" : "Non";
+		
+		if(autorisation.equals("Oui"))
+			System.out.println("Vous avez le droit d'utiliser le service");
 
 	}
 
