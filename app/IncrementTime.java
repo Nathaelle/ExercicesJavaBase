@@ -1,11 +1,18 @@
 package app;
+import java.util.Scanner;
 
 public class IncrementTime {
 
 	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
 
-		byte hours = 23;
-		byte minutes = 59;
+		System.out.println("Entrez les heures :");
+		byte hours = input.nextByte();
+		System.out.println("Entrez les minutes :");
+		byte minutes = input.nextByte();
+		
+		input.close();
 		
 		minutes++;
 		hours++;
