@@ -1,5 +1,7 @@
 package app;
 
+import java.util.Scanner;
+
 public class DemoCollections {
 
 	public static void main(String[] args) {
@@ -26,7 +28,7 @@ public class DemoCollections {
 		// Exercice : Afficher le "labyrinthe" suivant
 		char [][] maze = {
 	            "######################################".toCharArray(),
-	            "#S     #       #             #       #".toCharArray(),
+	            "S      #       #             #       #".toCharArray(),
 	            "###### # # ### # ########### # ### # #".toCharArray(),
 	            "#      # # # # # #         # #   #####".toCharArray(),
 	            "### #### # # # # # # # # # # # #     #".toCharArray(),
@@ -34,27 +36,83 @@ public class DemoCollections {
 	            "# #### # # # # # #             #     #".toCharArray(),
 	            "# #    # # # #   # ########### # # # #".toCharArray(),
 	            "# ###### # # # # # # # # # # # # # # #".toCharArray(),
-	            "#        #   # #           # #   # #D#".toCharArray(),
-	            "######################################".toCharArray()
+	            "#        #   # #           # #   # # #".toCharArray(),
+	            "####################################D#".toCharArray()
 	        };
 		
-		for (char[] line : maze) {
-			String ligne = "";
-			for (char cell : line) {
-				ligne += cell + " ";
-			}
-//			System.out.println(ligne);
-		}
 		
-		int len = maze.length;
-		for (int i = 0; i < len; i++) {
-			String ligne = "";
-			int len2 = maze[i].length;
-			for (int j = 0; j < len2; j++) {
-				ligne += maze[i][j] + " ";
+		// Labyrinthe 11 * 38
+		
+		boolean stop = false;
+		
+		int positionX = 36;
+		int positionY = 9;
+		maze[positionY][positionX] = 'x';
+
+		Scanner input = new Scanner(System.in);
+		
+		do {
+			
+			for (char[] line : maze) {
+				String ligne = "";
+				for (char cell : line) {
+					ligne += cell + " ";
+				}
+				System.out.println(ligne);
 			}
-			System.out.println(ligne);
-		}
+			
+			System.out.println("Où souhaitez-vous aller ? ");
+			System.out.println("H (Haut)");
+			System.out.println("B (Bas)");
+			System.out.println("D (Droite)");
+			System.out.println("G (Gauche)");
+			
+			String choice = input.nextLine();
+			
+			switch (choice) {
+				case "H":
+					if(maze[positionY - 1][positionX] != '#') {
+						maze[positionY][positionX] = ' ';
+						positionY--;
+						maze[positionY][positionX] = 'x';
+					}
+					break;
+				case "B":
+					if(maze[positionY + 1][positionX] != '#') {
+						maze[positionY][positionX] = ' ';
+						positionY++;
+						maze[positionY][positionX] = 'x';
+					}
+					break;
+				case "D":
+					if(maze[positionY][positionX + 1] != '#') {
+						maze[positionY][positionX] = ' ';
+						positionX++;
+						maze[positionY][positionX] = 'x';
+					}
+					break;
+				case "G":
+					if(maze[positionY][positionX - 1] != '#') {
+						maze[positionY][positionX] = ' ';
+						positionX--;
+						maze[positionY][positionX] = 'x';
+					}
+					break;
+				default:
+					break;
+			}
+			
+		} while (!stop);
+		
+		input.close();
+		
+		
+		
+		
+		
+		
+		
+
 		
 	}
 }
