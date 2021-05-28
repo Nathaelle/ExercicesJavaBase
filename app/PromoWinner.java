@@ -26,8 +26,13 @@ public class PromoWinner {
 		int points = (int) Math.floor(somme / 25);
 		System.out.println("Nombre de points de fidelités : " + points + "pts");
 		
+		double fact2 = sc.nextDouble();
+		if (points >= 20) {
+			fact2 -= fact2 * 0.2;
+		}
 		
-		
+		System.out.println("Montant après remise éventuelle : " + fact2);
+		sc.close();
 	}
 
 }
