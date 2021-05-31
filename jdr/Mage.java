@@ -24,7 +24,7 @@ public class Mage extends Character {
 	}
 	
 	@Override
-	public void attack(Character perso) {
+	public void attack(Target perso) {
 		perso.damage(throwSpell());
 		System.out.println("Je lance des sorts");
 	}

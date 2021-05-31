@@ -27,7 +27,7 @@ public class Warrior extends Character {
 	}
 
 	@Override
-	public void attack(Character perso) {
+	public void attack(Target perso) {
 		perso.damage(hit());
 		System.out.println("Je frappe");
 	}

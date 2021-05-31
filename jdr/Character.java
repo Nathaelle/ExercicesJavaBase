@@ -1,6 +1,6 @@
 package jdr;
 
-public abstract class Character {
+public abstract class Character implements Attacker, Target {
 
 	private String name;
 	private int strength;
@@ -38,7 +38,7 @@ public abstract class Character {
 	}
 	
 	
-	public abstract void attack(Character perso);
+	public abstract void attack(Target perso);
 	
 	public void damage(int pts) {
 		this.health -= pts;

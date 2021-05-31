@@ -24,7 +24,7 @@ public class Archer extends Character {
 	}
 
 	@Override
-	public void attack(Character perso) {
+	public void attack(Target perso) {
 		perso.damage(throwArrow());
 		System.out.println("Je tire des flèches");
 	}
