@@ -2,27 +2,50 @@ package jdr;
 
 public class Mage extends Character {
 
+	private static final int MAX_HEALTH = 900;
+	
+	/* Constructeurs */
 	
 	public Mage() {
-		super();
-	}
-
-	public Mage(String name, int strength, int level) {
-		super(name, strength, level);
+		super(MAX_HEALTH);
 	}
 
 	public Mage(String name) {
-		super(name);
+		super(name, MAX_HEALTH);
 	}
+
+	public Mage(String name, int strength, int level) {
+		super(name, strength, level, MAX_HEALTH);
+	}
+	
+	public Mage(String name, int strength, int level, int health) {
+		super(name, strength, level, MAX_HEALTH, health);
+	}
+	
+	/* Getter (constante de classe) */
+	
+	public static int getMaxHealth() {
+		return MAX_HEALTH;
+	}
+	
+	/* Méthodes spécifiques de la classe */
 
 	public int throwSpell() {
 		return 12;
 	}
 	
+	/* Méthodes héritées redéfinies/ implémentées */
+
+	@Override
+	public String toString() {
+		return "Mage (spécialité) + \n" + super.toString();
+	}
+	
+	@Override
 	public String showCharacter() {
 		return "Archer + " + super.showCharacter();
 	}
-	
+
 	@Override
 	public void attack(Target perso) {
 		perso.damage(throwSpell());

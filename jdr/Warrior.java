@@ -2,26 +2,46 @@ package jdr;
 
 public class Warrior extends Character {
 	
-	private static final int MAX_HEALTH = 100;
+	private static final int MAX_HEALTH = 1000;
+	
+	/* Constructeurs */
 
 	public Warrior() {
-		super();
+		super(MAX_HEALTH);
 	}
 	
 	public Warrior(String name) {
-		super(name);
+		super(name, MAX_HEALTH);
 	}
 
 	public Warrior(String name, int strength, int level) {
 		super(name, strength, level, MAX_HEALTH);
 	}
+	
+	public Warrior(String name, int strength, int level, int health) {
+		super(name, strength, level, MAX_HEALTH, health);
+	}
 
+	/* Getter (constante de classe) */
 	
+	public static int getMaxHealth() {
+		return MAX_HEALTH;
+	}
 	
+	/* Méthodes spécifiques de la classe */
+
 	public int hit() {
 		return 15;
 	}
+	
+	/* Méthodes héritées redéfinies/ implémentées */
+	
+	@Override
+	public String toString() {
+		return "Warrior (spécialité) + \n" + super.toString();
+	}
 
+	@Override
 	public String showCharacter() {
 		return "Warrior + " + super.showCharacter();
 	}
