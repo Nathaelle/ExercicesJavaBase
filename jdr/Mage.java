@@ -1,4 +1,4 @@
-package models;
+package jdr;
 
 public class Mage extends Character {
 
@@ -15,12 +15,18 @@ public class Mage extends Character {
 		super(name);
 	}
 
-	public void throwSpell() {
-		System.out.println("Lance un sort");
+	public int throwSpell() {
+		return 12;
 	}
 	
 	public String showCharacter() {
 		return "Archer + " + super.showCharacter();
+	}
+	
+	@Override
+	public void attack(Character perso) {
+		perso.damage(throwSpell());
+		System.out.println("Je lance des sorts");
 	}
 	
 }

@@ -1,6 +1,6 @@
-package models;
+package jdr;
 
-public class Character {
+public abstract class Character {
 
 	private String name;
 	private int strength;
@@ -38,9 +38,7 @@ public class Character {
 	}
 	
 	
-	public void attack(Character perso) {
-		perso.damage(10);
-	}
+	public abstract void attack(Character perso);
 	
 	public void damage(int pts) {
 		this.health -= pts;

@@ -1,4 +1,4 @@
-package models;
+package vehicules;
 
 public class Bus extends Vehicule {
 

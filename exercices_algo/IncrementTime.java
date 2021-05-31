@@ -1,4 +1,4 @@
-package app;
+package exercices_algo;
 import java.util.Scanner;
 
 public class IncrementTime {

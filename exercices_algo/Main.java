@@ -1,4 +1,4 @@
-package app;
+package exercices_algo;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package models;
+package jdr;
 
 public class Warrior extends Character {
 	
@@ -18,11 +18,17 @@ public class Warrior extends Character {
 
 	
 	
-	public void hit() {
-		System.out.println("Frappe");
+	public int hit() {
+		return 15;
 	}
 
 	public String showCharacter() {
 		return "Warrior + " + super.showCharacter();
+	}
+
+	@Override
+	public void attack(Character perso) {
+		perso.damage(hit());
+		System.out.println("Je frappe");
 	}
 }

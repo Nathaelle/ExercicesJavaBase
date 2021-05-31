@@ -1,4 +1,4 @@
-package models;
+package vehicules;
 import java.util.ArrayList;
 
 public class Moto extends Vehicule {

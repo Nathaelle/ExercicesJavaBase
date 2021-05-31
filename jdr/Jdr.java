@@ -1,4 +1,4 @@
-package models;
+package jdr;
 
 public class Jdr {
 
@@ -7,7 +7,6 @@ public class Jdr {
 		Archer perso1 = new Archer("Rose", 10, 5);
 		Warrior perso2 = new Warrior("Golbu");
 		Mage perso3 = new Mage("Merlin", 13, 3);
-		Character persoN = new Character();
 		
 		System.out.println(perso1.showCharacter());
 		System.out.println(perso2.showCharacter());

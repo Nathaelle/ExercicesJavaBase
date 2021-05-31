@@ -1,4 +1,4 @@
-package models;
+package jdr;
 
 public class Archer extends Character {
 
@@ -15,11 +15,17 @@ public class Archer extends Character {
 		super(name);
 	}
 
-	public void throwArrow() {
-		System.out.println("Lance une flèche");
+	public int throwArrow() {
+		return 8;
 	}
 	
 	public String showCharacter() {
 		return "Archer + " + super.showCharacter();
+	}
+
+	@Override
+	public void attack(Character perso) {
+		perso.damage(throwArrow());
+		System.out.println("Je tire des flèches");
 	}
 }
