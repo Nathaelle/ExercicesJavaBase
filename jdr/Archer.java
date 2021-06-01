@@ -10,7 +10,7 @@ public class Archer extends Character {
 		super(MAX_HEALTH);
 	}
 	
-	public Archer(String name, int maxHealth) {
+	public Archer(String name) {
 		super(name, MAX_HEALTH);
 	}
 
@@ -24,7 +24,7 @@ public class Archer extends Character {
 
 	/* Getter (constante de classe) */
 	
-	public static int getMaxHealth() {
+	public int getMaxHealth() {
 		return MAX_HEALTH;
 	}
 	
@@ -48,7 +48,9 @@ public class Archer extends Character {
 
 	@Override
 	public void attack(Target perso) {
-		perso.damage(throwArrow());
-		System.out.println("Je tire des flèches");
+		if(!isDeath()) {
+			perso.damage(throwArrow());
+			System.out.println("Je tire des flèches");
+		}
 	}
 }

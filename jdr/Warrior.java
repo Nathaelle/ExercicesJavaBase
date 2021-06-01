@@ -24,7 +24,7 @@ public class Warrior extends Character {
 
 	/* Getter (constante de classe) */
 	
-	public static int getMaxHealth() {
+	public int getMaxHealth() {
 		return MAX_HEALTH;
 	}
 	
@@ -48,7 +48,9 @@ public class Warrior extends Character {
 
 	@Override
 	public void attack(Target perso) {
-		perso.damage(hit());
-		System.out.println("Je frappe");
+		if(!isDeath()) {
+			perso.damage(hit());
+			System.out.println("Je frappe");
+		}
 	}
 }

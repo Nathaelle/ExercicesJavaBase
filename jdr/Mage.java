@@ -24,7 +24,7 @@ public class Mage extends Character {
 	
 	/* Getter (constante de classe) */
 	
-	public static int getMaxHealth() {
+	public int getMaxHealth() {
 		return MAX_HEALTH;
 	}
 	
@@ -48,8 +48,10 @@ public class Mage extends Character {
 
 	@Override
 	public void attack(Target perso) {
-		perso.damage(throwSpell());
-		System.out.println("Je lance des sorts");
+		if(!isDeath()) {
+			perso.damage(throwSpell());
+			System.out.println("Je lance des sorts");
+		}
 	}
 	
 }
