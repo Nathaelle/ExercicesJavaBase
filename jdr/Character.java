@@ -22,30 +22,30 @@ public abstract class Character implements Attacker, Target {
 	
 	public Character(String name, int maxHealth) throws CharacterException {
 
+		this.maxHealth = maxHealth;
 		setName(name);
 		this.strength = 4 + (int) Math.floor(Math.random() * 8);
 		this.level = 1;
 		this.health = maxHealth;
-		this.maxHealth = maxHealth;
 	}
 	
 	public Character(String name, int strength, int level, int maxHealth) throws CharacterException {
 
-		setName(name);
-		this.strength = strength;
-		this.level = level;
-		this.health = maxHealth;
 		this.maxHealth = maxHealth;
+		setName(name);
+		setStrength(strength);
+		setLevel(level);
+		this.health = maxHealth;
 	}
 	
 	public Character(String name, int strength, int level, int maxHealth, int health) throws CharacterException {
-		
+
+		this.maxHealth = maxHealth;
 		setName(name);
-		this.strength = strength;
-		this.level = level;
+		setStrength(strength);
+		setLevel(level);
 		setHealth(health);
 		setDeath();
-		this.maxHealth = maxHealth;
 	}
 	
 	/* Getters & Setters */
@@ -73,8 +73,16 @@ public abstract class Character implements Attacker, Target {
 
 	/* Toujours inférieur à maxHealth/ 50 */
 	/* Toujours valeur positive */
-	public void setStrength(int strength) {
-		this.strength = strength;
+	public void setStrength(int strength) throws CharacterAttIllegalValue {
+		
+		if(strength >= 0 && strength < maxHealth / 50) {
+			this.strength = strength;
+		} else if(strength >= 0) {
+			throw new CharacterAttIllegalValue("La limite est de " + (maxHealth / 50) + "pts");
+		} else {
+			throw new CharacterAttIllegalValue("La valeur doit être positive");
+		}
+		
 	}
 
 	public int getLevel() {
@@ -82,8 +90,13 @@ public abstract class Character implements Attacker, Target {
 	}
 
 	/* Toujours valeur positive */
-	public void setLevel(int level) {
-		this.level = level;
+	public void setLevel(int level) throws CharacterAttIllegalValue {
+		
+		if(level >= 0) {
+			this.level = level;
+		} else {
+			throw new CharacterAttIllegalValue("La valeur doit être positive");
+		}
 	}
 	
 	public int getMaxHealth() {

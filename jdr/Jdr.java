@@ -1,6 +1,7 @@
 package jdr;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Map;
 
 public class Jdr {
 
@@ -9,12 +10,15 @@ public class Jdr {
 		/* public Archer(String name, int strength, int level, int health) */
 		
 		try {
-			Archer perso1 = new Archer("Ro", 10, 5, 500);
+			Archer perso1 = new Archer("Rose", 12, 5, 500);
 			System.out.println(perso1);
+			
 		} catch(CharacterException e) {
 			System.out.println("Il y a eu une erreur lors de la création du personnage avec le message suivant :");
 			System.out.println(e.getMessage());
 		}
+		
+		
 		
 		
 //		Warrior perso2 = new Warrior("Golbu");
