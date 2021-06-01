@@ -10,15 +10,15 @@ public class Warrior extends Character {
 		super(MAX_HEALTH);
 	}
 	
-	public Warrior(String name) {
+	public Warrior(String name) throws CharacterException {
 		super(name, MAX_HEALTH);
 	}
 
-	public Warrior(String name, int strength, int level) {
+	public Warrior(String name, int strength, int level) throws CharacterException {
 		super(name, strength, level, MAX_HEALTH);
 	}
 	
-	public Warrior(String name, int strength, int level, int health) {
+	public Warrior(String name, int strength, int level, int health) throws CharacterException {
 		super(name, strength, level, MAX_HEALTH, health);
 	}
 

@@ -10,15 +10,15 @@ public class Mage extends Character {
 		super(MAX_HEALTH);
 	}
 
-	public Mage(String name) {
+	public Mage(String name) throws CharacterException {
 		super(name, MAX_HEALTH);
 	}
 
-	public Mage(String name, int strength, int level) {
+	public Mage(String name, int strength, int level) throws CharacterException {
 		super(name, strength, level, MAX_HEALTH);
 	}
 	
-	public Mage(String name, int strength, int level, int health) {
+	public Mage(String name, int strength, int level, int health) throws CharacterException {
 		super(name, strength, level, MAX_HEALTH, health);
 	}
 	

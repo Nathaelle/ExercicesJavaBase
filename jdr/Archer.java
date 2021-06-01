@@ -10,15 +10,15 @@ public class Archer extends Character {
 		super(MAX_HEALTH);
 	}
 	
-	public Archer(String name) {
+	public Archer(String name) throws CharacterException {
 		super(name, MAX_HEALTH);
 	}
 
-	public Archer(String name, int strength, int level) {
+	public Archer(String name, int strength, int level) throws CharacterException {
 		super(name, strength, level, MAX_HEALTH);
 	}
 
-	public Archer(String name, int strength, int level, int health) {
+	public Archer(String name, int strength, int level, int health) throws CharacterException {
 		super(name, strength, level, MAX_HEALTH, health);
 	}
 

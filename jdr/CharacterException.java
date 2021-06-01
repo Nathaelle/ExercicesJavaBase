@@ -22,10 +22,7 @@ public class CharacterException extends Exception {
 		super(message, cause, enableSuppression, writableStackTrace);
 	}
 
-	@Override
-	public String toString() {
-		return "CharacterException []";
-	}
+	
 	
 	
 

@@ -20,24 +20,27 @@ public abstract class Character implements Attacker, Target {
 		this.maxHealth = maxHealth;
 	}
 	
-	public Character(String name, int maxHealth) {
-		this.name = name;
+	public Character(String name, int maxHealth) throws CharacterException {
+
+		setName(name);
 		this.strength = 4 + (int) Math.floor(Math.random() * 8);
 		this.level = 1;
 		this.health = maxHealth;
 		this.maxHealth = maxHealth;
 	}
 	
-	public Character(String name, int strength, int level, int maxHealth) {
-		this.name = name;
+	public Character(String name, int strength, int level, int maxHealth) throws CharacterException {
+
+		setName(name);
 		this.strength = strength;
 		this.level = level;
 		this.health = maxHealth;
 		this.maxHealth = maxHealth;
 	}
 	
-	public Character(String name, int strength, int level, int maxHealth, int health) {
-		this.name = name;
+	public Character(String name, int strength, int level, int maxHealth, int health) throws CharacterException {
+		
+		setName(name);
 		this.strength = strength;
 		this.level = level;
 		setHealth(health);
@@ -52,8 +55,16 @@ public abstract class Character implements Attacker, Target {
 	}
 
 	/* 3 - 10 caractères maximum */
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String name) throws CharacterException {
+		
+		int len = name.length();
+		if(len < 3) {
+			throw new CharacterNameException("Le nom doit être composé d'au moins 3 caractères");
+		} else if(len > 10) {
+			throw new CharacterNameException("Le nom est trop long (10 caractères maximum)");
+		} else {
+			this.name = name;
+		}
 	}
 
 	public int getStrength() {
