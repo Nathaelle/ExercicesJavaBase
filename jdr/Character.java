@@ -51,6 +51,7 @@ public abstract class Character implements Attacker, Target {
 		return this.name;
 	}
 
+	/* 3 - 10 caractères maximum */
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -59,6 +60,8 @@ public abstract class Character implements Attacker, Target {
 		return this.strength;
 	}
 
+	/* Toujours inférieur à maxHealth/ 50 */
+	/* Toujours valeur positive */
 	public void setStrength(int strength) {
 		this.strength = strength;
 	}
@@ -67,6 +70,7 @@ public abstract class Character implements Attacker, Target {
 		return this.level;
 	}
 
+	/* Toujours valeur positive */
 	public void setLevel(int level) {
 		this.level = level;
 	}
@@ -83,6 +87,7 @@ public abstract class Character implements Attacker, Target {
 		return health;
 	}
 
+	/* Jamais supérieur à la santé maximum */
 	public void setHealth(int health) {
 		
 		if(health > this.maxHealth) {

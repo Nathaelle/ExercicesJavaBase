@@ -18,17 +18,21 @@ public class Jdr {
 			
 			System.out.println("Choisissez un type de personnage (ARCHER - WARRIOR - MAGE)");
 			String choix = sc.nextLine();
+			System.out.println("Choisissez son nom ([3-10] caractères)");
+			String nom = sc.nextLine();
 			
 			try {
 				pb = false;
-				Character perso4 = CharacterFactory.createCharacter(choix, "Robin");
+				Character perso4 = CharacterFactory.createCharacter(choix, nom);
 				System.out.println(perso4);
 				
-			} catch(Exception e) {
-				e.printStackTrace();
+			} catch(CharacterException e) {
+//				e.printStackTrace();
+				System.out.println(e);
 				pb = true;
 				System.out.println("Il y a eu un problème, veuillez recommencer !");
-			}
+			} 
+			
 		} while(pb);
 		
 		
