@@ -14,8 +14,19 @@ public class TestRegex {
 		// [A-Z] : ABCDEFGHIJKLMNOPQRSTUVWXYZ
 		// [0-9] : 0123456789
 		// \\w : [a-zA-Z0-9_]
-		System.out.println(texte.matches("^[\\w \\.]*$"));
-		System.out.println(texte2.matches("^[\\w \\.]*$"));
+		// . : Nimporte quel caractère
+		// \\. : Un point
+//		System.out.println(texte.matches("^[\\w \\.]*$"));
+//		System.out.println(texte2.matches("^[\\w \\.]*$"));
+		
+		String telephone = "0786985478";
+		// Je cherche à vérifier que l'utilisateur a bien saisi un numero de téléphone portable
+		System.out.println(telephone.matches("^0[67][0-9]{8}$"));
+		
+		
+		String password = "ceviushsr";
+		// Je cherche à vérifier que le mot de passe contient au moins 8 caractères
+		System.out.println(password.matches("^[\\w]{8,}$"));
 		
 	}
 
