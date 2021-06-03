@@ -1,6 +1,6 @@
 package comptecommun;
 
-public class Client implements Runnable{
+public class Client implements Runnable, Observateur {
 	
 	private String nom;
 	private String prenom;
@@ -11,6 +11,7 @@ public class Client implements Runnable{
 		this.nom = nom;
 		this.prenom = prenom;
 		this.compte = compte;
+		this.compte.inscription(this);
 	}
 
 	public String getNom() {
@@ -35,6 +36,7 @@ public class Client implements Runnable{
 
 	public void setCompte(Compte compte) {
 		this.compte = compte;
+		this.compte.inscription(this);
 	}
 	
 	public void retrait(int somme) {
@@ -84,6 +86,12 @@ public class Client implements Runnable{
 	@Override
 	public String toString() {
 		return "Client [nom=" + nom + ", prenom=" + prenom + ", compte=" + compte + "]";
+	}
+
+	@Override
+	public void update(String message) {
+		
+		System.out.println(this + " a reçu le sms suivant = " + message);
 	}
 
 }

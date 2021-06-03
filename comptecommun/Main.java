@@ -5,10 +5,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//Compte compteCommun = new Compte(45000);
-		Compte compteCommun = Compte.getInstance(1560);
+		Compte compteCommun = Compte.getInstance(2560);
 		System.out.println(compteCommun);
-		Compte compteCommun2 = Compte.getInstance(86547325);
-		System.out.println(compteCommun2);
 		
 		System.out.println(compteCommun.getSolde());
 		
