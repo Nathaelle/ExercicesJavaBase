@@ -9,6 +9,9 @@ public class Main {
 		// Je crée un objet type Scanner (qui va lire l'entrée console)
 		Scanner scan = new Scanner(System.in);
 		
+		System.out.println("Entrez un nombre");
+		int test = scan.nextInt();
+		
 		// J'utilise les méthodes de mon Scanner pour lire les données
 		// scan.nextLine() => récupère une chaîne de caractères
 		// scan.nextInt() => récupère un nombre entier
